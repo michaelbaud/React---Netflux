@@ -1,0 +1,304 @@
+/*---------------------*\
+    Fonts
+\*---------------------*/
+@font-face {
+  font-family: "28 Days Later";
+  font-style: normal;
+  font-weight: normal;
+  src: local("28 Days Later"), url("../fonts/28 Days Later.woff") format("woff");
+}
+@font-face {
+  font-family: "Wicked Scary Movie";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Wicked Scary Movie"), url("../fonts/WickedScaryMovie.woff") format("woff");
+}
+
+/*---------------------*\
+    General
+\*---------------------*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 1rem;
+}
+body {
+  font-family: "Wicked Scary Movie", Helvetica, Arial, sans-serif !important;
+}
+h1, h2, h3 {
+  font-family: "28 Days Later" !important;
+}
+.faSpinner--container {
+  display: flex;
+}
+.faSpinner {
+  color: #a81818;
+  font-size: 3em;
+  animation: spinner 1.3s steps(9) infinite;
+  margin: auto;
+}
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+
+/*---------------------*\
+    Header
+\*---------------------*/
+.header {
+  z-index: 2;
+  width: 100%;
+  height: 6em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #901818;
+  color: #fff;
+  position: fixed;
+  top: 0;
+}
+.header h1 {
+  font-size: 2.5em;
+}
+.header--movie--container {
+  margin-left: 2em;
+}
+.header--movie {
+  color: #fff;
+  font-size: 3em;
+}
+.header--heart--badge--container {
+  cursor: pointer;
+  margin-right: 2em;
+}
+.header--heart {
+  color: #d8a860;
+  font-size: 3em;
+  display: inline-block;
+}
+.header--badge {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  margin-left: -1.2em;
+  padding-top: 0.3em;
+  padding-left: 0.2em;
+  border-radius: 50%;
+  background: #1c1c1c;
+  color: #fff;
+  font-size: 1.5em;
+  letter-spacing: 0.2em;
+  text-align: center;
+}
+
+/*---------------------*\
+    HeaderImg
+\*---------------------*/
+.headerImg {
+  margin-top: 6em;
+  position: relative;
+  margin-bottom: -6px;
+}
+.headerImg img {
+  width: 100%;
+}
+.headerImg--overlay {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.719);
+  color: white;
+  bottom: 7em;
+  width: 40%;
+  padding: 2em;
+  border-radius: 0 5px 5px 0;
+}
+.headerImg--overlay__title {
+  display: inline-block;
+  font-size: 2em;
+  padding-bottom: 0.3em;
+  border-bottom: 0.15em solid #d8a860;
+}
+.headerImg--overlay__desc {
+  font-size: 1.6em;
+  line-height: 1.5em;
+  padding-top: 0.5em;
+}
+
+/*---------------------*\
+    SearchBar
+\*---------------------*/
+.searchBar--container {
+  padding: 2em 0;
+  text-align: center;
+  background: #901818;
+}
+.searchBar {
+  border-radius: 4em;
+  box-shadow: 0 0.6em 0.8em rgba(0, 0, 0, 0.26);
+  background: #fff;
+  margin: auto;
+  width: 70%;
+  position: relative;
+}
+.searchBar--input {
+  display: inline-block;
+  padding: 0.6em 0 0.3em 0;
+  font-size: 2em;
+  color: #5a6674;
+  width: 90%;
+  border: none;
+  text-align: center;
+  font-family: "Wicked Scary Movie" !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.searchBar--submit {
+  position: absolute;
+  right: 0;
+  border-radius: 0 4em 4em 0;
+  cursor: pointer;
+  height: 100%;
+  padding: 0 1.2em;
+}
+.searchBar--submit:hover {
+  background: #901818;
+  border: 1px solid #fff;
+}
+.searchBar--submit:hover > .searchIcon {
+  color: #fff;
+}
+.searchIcon {
+  font-size: 2em;
+  color: #901818;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/*---------------------*\
+    PosterList
+\*---------------------*/
+.posterList--title {
+  font-size: 2em;
+  color: #1c1c1c;
+  margin-top: 1.5em;
+  text-align: center;
+}
+.posterList--grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2em;
+}
+.posterList--grid > * {
+  width: 33.33%;
+  align-items: center;
+}
+
+/*---------------------*\
+    Poster
+\*---------------------*/
+.posterList--grid__item {
+  padding: 1.1em;
+}
+.poster {
+  position: relative;
+}
+.poster--img {
+  width: 100%;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: -4px;
+}
+.poster--overlay {
+  position: absolute;
+  border-radius: 5px 5px 0 0;
+  width: 100%;
+  left: 0;
+  top: 0;
+  padding: 2em 1em;
+  background: rgba(0, 0, 0, 0.5);
+}
+.poster--icon {
+  color: #c41c1c;
+  font-size: 2em;
+  margin-bottom: -0.1em;
+}
+.poster--icon:hover {
+  cursor: pointer;
+}
+.poster--overlay__title {
+  display: inline-block;
+  font-size: 1.5em;
+  color: #fff;
+  margin-right: 1em;
+}
+
+/*---------------------*\
+    LoadButton
+\*---------------------*/
+.loadButton {
+  margin: 0 auto;
+  margin-bottom: 3.5em;
+  border: 3px solid #781818;
+  background: #901818;
+  width: 70%;
+  text-align: center;
+  color: #fff;
+  padding: 1em 0;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.loadButton--text {
+  font-size: 1.8em;
+}
+.loadButton:hover {
+  opacity: 0.9;
+}
+
+
+/*---------------------*\
+    Media-queries
+\*---------------------*/
+
+/*  Tablets  */
+@media screen and (max-width: 1023px) {
+  h1 {
+    color: yellow;
+  }
+  html {
+    font-size: 0.8rem;
+  }
+  .headerImg--overlay {
+    bottom: 3em;
+    width: 60%; 
+  }
+  .searchBar {
+    width: 80%;
+  }
+  .posterList--grid > * {
+    width: 50%;
+  }
+}
+
+/*  Mobile  */
+@media screen and (max-width: 768px) {
+  h1 {
+    color: blue;
+  }
+  html {
+    font-size: 0.7rem;
+  }
+  .headerImg--overlay {
+    bottom: 0.5em;
+    width: 80%; 
+  }
+  .searchBar {
+    width: 90%;
+  }
+  .posterList--grid > * {
+    width: 100%;
+  }
+}
+
+
