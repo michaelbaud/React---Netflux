@@ -4,7 +4,7 @@ import { HeaderImg, SearchBar, PosterList, LoadButton } from '../components'
 
 const Home = ({ state, onSearchClick, onButtonClick }) => {
 
-    const { mTitle, mDesc, image, movies, loading } = state
+    const { mTitle, mDesc, image, movies, loading, listMode } = state
 
     return (
         <div className="home">
@@ -14,7 +14,7 @@ const Home = ({ state, onSearchClick, onButtonClick }) => {
                 imgSrc={image}
             />
             <SearchBar onSearchClick={onSearchClick} />
-            <PosterList movies={movies} />
+            <PosterList movies={movies} listMode={listMode} />
             <LoadButton loading={loading} onButtonClick={onButtonClick} />
         </div>
     )

@@ -107,7 +107,7 @@ h1, h2, h3 {
 .headerImg--overlay {
   position: absolute;
   background: rgba(0, 0, 0, 0.719);
-  color: white;
+  color: #fff;
   bottom: 7em;
   width: 40%;
   padding: 2em;
@@ -191,7 +191,7 @@ h1, h2, h3 {
   padding: 2em;
 }
 .posterList--grid > * {
-  width: 33.33%;
+  width: 25%;
   align-items: center;
 }
 
@@ -216,12 +216,17 @@ h1, h2, h3 {
   width: 100%;
   left: 0;
   top: 0;
-  padding: 2em 1em;
-  background: rgba(0, 0, 0, 0.5);
+  padding: 1em 1em;
+  background: rgba(0, 0, 0, 0.884);
+}
+.poster--overlay h2 {
+  color: #fff;
+  margin-bottom: 0.5em;
+  font-size: 1.2em;
 }
 .poster--icon {
   color: #c41c1c;
-  font-size: 2em;
+  font-size: 1.5em;
   margin-bottom: -0.1em;
 }
 .poster--icon:hover {
@@ -229,8 +234,8 @@ h1, h2, h3 {
 }
 .poster--overlay__title {
   display: inline-block;
-  font-size: 1.5em;
-  color: #fff;
+  font-size: 1em;
+  color: rgb(180, 178, 178);
   margin-right: 1em;
 }
 
@@ -262,12 +267,9 @@ h1, h2, h3 {
 \*---------------------*/
 
 /*  Tablets  */
-@media screen and (max-width: 1023px) {
-  h1 {
-    color: yellow;
-  }
+@media screen and (max-width: 1024px) {
   html {
-    font-size: 0.8rem;
+    font-size: 1.05rem;
   }
   .headerImg--overlay {
     bottom: 3em;
@@ -277,17 +279,58 @@ h1, h2, h3 {
     width: 80%;
   }
   .posterList--grid > * {
+    width: 33.33%;
+  }
+}
+
+/* Large Mobile  */
+@media screen and (max-width: 839px) {
+  html {
+    font-size: 1rem;
+  }
+  .header {
+    height: 4em;
+  }
+  .header--movie, .header--heart {
+    font-size: 2.6em;
+  }
+  .header--badge {
+    height: 1.4em;
+    width: 1.4em;
+    font-size: 1.4em;
+    letter-spacing: 0.1em;
+  }
+  .header h1 {
+    font-size: 1.8em;
+  }
+  .headerImg {
+    margin-top: 4em;
+  }
+  .headerImg--overlay {
+    font-size: 0.8em;
+  }
+  .posterList--grid {
+    padding: 0.5em;
+  }
+  .posterList--grid__item {
+    padding: 0.8em;
+  }
+  .headerImg--overlay {
+    bottom: 0.5em;
+    width: 80%; 
+  }
+  .searchBar {
+    width: 90%;
+  }
+  .posterList--grid > * {
     width: 50%;
   }
 }
 
-/*  Mobile  */
-@media screen and (max-width: 768px) {
-  h1 {
-    color: blue;
-  }
+/* Small Mobile  */
+@media screen and (max-width: 480px) {
   html {
-    font-size: 0.7rem;
+    font-size: 1.3rem;
   }
   .headerImg--overlay {
     bottom: 0.5em;

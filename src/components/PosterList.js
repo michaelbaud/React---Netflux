@@ -6,10 +6,11 @@ import { Poster } from './index'
 // dbMovie
 import { IMAGE_BASE_URL, POSTER_SIZE } from '../dbMovie/config'
 
-const PosterList = ({ movies }) => {
+const PosterList = ({ movies, listMode }) => {
 
     const renderPoster = movies.map(movie => {
-        const imgSrc = `${IMAGE_BASE_URL}/${POSTER_SIZE}/${movie.poster_path}`
+
+        const imgSrc = movie.poster_path !== null ? `${IMAGE_BASE_URL}/${POSTER_SIZE}/${movie.poster_path}` : 'images/no_image.jpg'
         return (
             <Poster
                 key={movie.id}
@@ -23,7 +24,10 @@ const PosterList = ({ movies }) => {
 
     return (
         <div className="posterList">
-            <h3 className="posterList--title">NOUVEAUX FILMS</h3>
+            <h3 className="posterList--title">
+                {listMode === "popular" && "NOUVEAUX FILMS"}
+                {listMode === "search" && "RESULTATS"}
+            </h3>
             <div className="posterList--grid">
                 {renderPoster}
             </div>

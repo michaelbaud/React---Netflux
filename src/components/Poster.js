@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { FiHeart } from 'react-icons/fi'
 import { FaHeart } from 'react-icons/fa'
 
-const Poster = ({ imgSrc, wished }) => {
+const Poster = ({ imgSrc, wished, mTitle }) => {
 
     const [hover, setHover] = useState(false)
 
@@ -18,6 +18,11 @@ const Poster = ({ imgSrc, wished }) => {
         console.log('Add avec Redux')
     }
 
+    const deleteAccent = (str) => {
+        str = str.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        return str
+    }
+
     return (
         <div className="posterList--grid__item">
             <div
@@ -29,6 +34,7 @@ const Poster = ({ imgSrc, wished }) => {
                 {
                     hover ? (
                         <div className="poster--overlay">
+                            <h2>{deleteAccent(mTitle)}</h2>
                             <h3 className="poster--overlay__title">LISTE DE SOUHAITS</h3>
                             {
                                 wished ?
